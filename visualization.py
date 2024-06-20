@@ -51,7 +51,7 @@ def visualization(df):
         marker_color='#ffff00',
         offsetgroup=0,
         text=[f'{rate:.2f}' for rate in df['202312_predict']/df['202212_real']],
-        textposition='outside'
+        textposition='inside'
     ), row=1, col=2)
 
     fig.add_trace(go.Bar(
@@ -61,7 +61,7 @@ def visualization(df):
         marker_color='#ff0000',
         offsetgroup=1,
         text=[f'{rate:.2f}' for rate in df['202312_real']/df['202212_real']],
-        textposition='outside'
+        textposition='inside'
     ), row=1, col=2)
 
     # Update layout for better appearance
@@ -80,6 +80,7 @@ def visualization(df):
         bargroupgap=0.1,  # Gap between bars of the same location coordinates
         legend_title_text='날짜 및 상승률',
         template='plotly_white'
+        #height=250 
     )
 
     # Adjust the subplot titles and layout
